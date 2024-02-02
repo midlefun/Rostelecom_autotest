@@ -1,3 +1,5 @@
+import time
+
 from playwright.sync_api import Page, expect
 import playwright
 import pytest
@@ -32,23 +34,20 @@ class IndexPage:
     def press_town_change_modal_button(self, page: Page) -> None:
         page.locator(self._BUTTON_TOWN_CHANGE_MODAL).click()
 
+    _SELECTOR = '.cmp-regions-select__result'
+
     def input_text_in_modal_input(self, page: Page) -> None:
         input = page.get_by_placeholder('Найти город')
         input.fill('Краснодар')
-        page.get_by_text('Краснодар').nth(1).click() ######################
+        page.wait_for_selector(self._SELECTOR)
+        input.press('Enter')
 
-    _BUTTON_TOWN_CHANGE_MODAL_TEXT = '#block-b2cpanellichnykhkabinetoviligeo >> .geo-name'
-    _BUTTON_TOWN_CHANGE_MODAL_TEX = '#cards-title >> .rt-link--orange'
+    _BUTTON_TOWN_CHANGE_MODAL_TEXT_HEADER = '#block-b2cpanellichnykhkabinetoviligeo >> .geo-name'
+    _BUTTON_TOWN_CHANGE_MODAL_TEXT_ORANGE = '#cards-title >> .rt-link--orange'
 
     def check_that_town_is_change(self, page: Page) -> None:
-
-        ##################Как получить ЮРЛ новой страницы ???????????
-        print('asddddddddddddddddd', page.locator(self._BUTTON_TOWN_CHANGE_MODAL_TEX).text_content())
-        assert page.locator(self._BUTTON_TOWN_CHANGE_MODAL_TEXT).text_content() == 'Краснодар'
-        assert page.locator(self._BUTTON_TOWN_CHANGE_MODAL_TEX).text_content() == 'г. Краснодар'
-
-        expect().nth(0).to_contain_text()
-        # page.locator(self._BUTTON_TOWN_CHANGE_MODAL_TEXT).nth(0).click()
-        # page.pause()
-
+        page.wait_for_selector(self._BUTTON_TOWN_CHANGE_MODAL_TEXT_ORANGE)
+        assert 'Краснодар' in page.locator(
+            self._BUTTON_TOWN_CHANGE_MODAL_TEXT_HEADER).text_content() and 'Краснодар' in page.locator(
+            self._BUTTON_TOWN_CHANGE_MODAL_TEXT_ORANGE).text_content() and page.url == config.url.DOMAIN_KRASNODAR
 

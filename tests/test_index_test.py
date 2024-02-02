@@ -16,4 +16,5 @@ class TestFooter:
         index_page.open_index_page(page)
         index_page.press_town_change_modal_button(page)
         index_page.input_text_in_modal_input(page)
+        index_page.press_town_change_modal_button(page)
         index_page.check_that_town_is_change(page)
