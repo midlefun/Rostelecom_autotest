@@ -18,3 +18,6 @@ class TestFooter:
         index_page.input_text_in_modal_input(page)
         index_page.press_town_change_modal_button(page)
         index_page.check_that_town_is_change(page)
+
+    def test_user_should_be_able_to_change_town_special_symbol(self, page):
+        pass
