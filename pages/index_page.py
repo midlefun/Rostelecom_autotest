@@ -9,7 +9,7 @@ import config
 class IndexPage:
     _BUTTON_LOGIN_MENU = '#lk-enter'
     _LINK_LOGIN_PAGE = '.lk-popup__links .'
-    _BUTTON_TOWN_CHANGE_MODAL = '#block-b2cpanellichnykhkabinetoviligeo'
+
 
     def open_index_page(self, page: Page) -> None:
         page.goto(config.url.DOMAIN_MSC)
@@ -27,7 +27,7 @@ class IndexPage:
         assert new_page.url == config.url.LOGIN
 
     ############################
-
+    _BUTTON_TOWN_CHANGE_MODAL = '#block-b2cpanellichnykhkabinetoviligeo'
     _POPUP_CHANGE_TOWN = '.cmp-regions-popup__rtp'
     _POPUP_CHANGE_TOWN_ACTIVE = '.rt-popup-wrapper--is-active'
 
