@@ -1,3 +1,4 @@
+import time
 import pytest
 
 link = "https://msk.rt.ru/"
@@ -10,7 +11,9 @@ class TestMainPage():
         browser_fixture.goto(link)
         browser_fixture.wait_for_selector('#lk-enter').click()
 
-    def test_add_to(self, browser_fixture) -> None:
+    @pytest.mark.parametrize('town, anchor', [("msk", " "), ("krasnodar", "/#4in1")])
+    def test_add_to(self, browser_fixture, town, anchor) -> None:
+        link = f"https://{town}.rt.ru{anchor}"
         browser_fixture.goto(link)
         browser_fixture.wait_for_selector('#block-b2cpanellichnykhkabinetoviligeo').click()
-        # browser_fixture.pause()
+        time.sleep(2)
