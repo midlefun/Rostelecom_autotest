@@ -21,3 +21,6 @@ class TestFooter:
 
     def test_user_should_be_able_to_change_town_special_symbol(self, page):
         pass
+
+    def test_user_should_be_able_to_change_town_special_symbol(self, page):
+        pass
