@@ -1,6 +1,7 @@
 import pytest, os
 from playwright.sync_api import Playwright, Browser, BrowserContext, Page, sync_playwright
 
+
 class Playwright:
     PAGE_VIEWPORT_SIZE = {'width': 1920, 'height': 1080}
     ENV = os.getenv('ENV') if os.getenv('ENV') is not None else 'stage'
@@ -35,3 +36,9 @@ def get_context(browser) -> BrowserContext:
     )
     return context
 
+
+@pytest.mark.parametrize('town, anchor', [("msk", " "), ("krasnodar", "/#4in1")])
+def test_guest_should_see_login_link(self, browser_fixture, town, anchor) -> None:
+    link = f"https://{town}.rt.ru{anchor}"
+    browser_fixture.goto(link)
+    browser_fixture.wait_for_selector('#lk-enter')
