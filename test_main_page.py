@@ -10,6 +10,12 @@ def test_guest_can_go_to_login_page(browser_fixture):
     page.open()
     page.go_to_login_page()
 
+def test_guest_can_see_login_page  (browser_fixture):
+    link = "https://msk.rt.ru/"
+    page = MainPage(browser_fixture, link)
+    page.open()
+    page.should_be_login_page()
+
 
 # def test_guest_could_click_to_login_link(browser_fixture) -> None:
 #     guest_can_go_to_login_page(browser_fixture)
