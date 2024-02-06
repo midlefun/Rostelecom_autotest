@@ -22,6 +22,8 @@ class MainPage(BasePage):
             self.browser_fixture.get_by_text('Личный кабинет РФ').nth(0).click()
         new_page = str(login_page.value)
         #TODO:Избавиться от ошибки деление str на INT
+        # Переименовать методы и тесты в нормальный вид
+        #YJ
 
         # self.browser_fixture.get_by_text('Личный кабинет РФ').nth(0).click()
         # print(self.browser_fixture, self.browser_fixture.url)
