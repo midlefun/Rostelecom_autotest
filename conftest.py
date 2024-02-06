@@ -1,5 +1,6 @@
-import pytest, os
-from playwright.sync_api import Playwright, Browser, BrowserContext, Page, sync_playwright
+import os
+import pytest
+from playwright.sync_api import Playwright, BrowserContext, Page, sync_playwright
 
 
 class Playwright:
@@ -20,7 +21,6 @@ def browser_fixture() -> Page:
     browser = playwright.chromium.launch(headless=True)
     context = get_context(browser)
     page = context.new_page()
-    # page.goto(link)
     yield page
     page.close()
     browser.close()

@@ -1,4 +1,4 @@
-class BasePage():
+class BasePage:
     def __init__(self, browser_fixture, url):
         self.browser_fixture = browser_fixture
         self.url = url

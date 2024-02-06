@@ -1,7 +1,7 @@
-class MainPageLocators():
-    LOGIN_PAGE_LINK = '#lk-enter'
+class MainPageLocators:
+    ENTER_BUTTON = '#lk-enter'
 
 
-class LoginPageLocators():
-    LOGIN_INPUT = '#address'
-    LOGIN_ENTER_WITH_PASSWORD_BUTTON = '#standard_auth_btn'
+class LoginPageLocators:
+    EMAIL_OR_TELEPHONE_INPUT = '#address'
+    ENTER_WITH_PASSWORD_BUTTON = '#standard_auth_btn'
