@@ -17,6 +17,7 @@ class Playwright:
 def browser_fixture() -> Page:
     playwright = sync_playwright().start()
     browser = playwright.chromium.launch(headless=False)
+    # browser = playwright.chromium.launch(headless=True)
     context = get_context(browser)
     page = context.new_page()
     # page.goto(link)

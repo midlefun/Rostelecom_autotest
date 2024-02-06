@@ -5,3 +5,6 @@ class BasePage():
 
     def open(self):
         self.browser_fixture.goto(self.url)
+
+    def pause(self):
+        self.browser_fixture.pause()
