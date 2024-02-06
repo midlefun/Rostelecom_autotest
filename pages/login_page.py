@@ -20,7 +20,7 @@ class LoginPage(BasePage):
     def should_be_register_form(self):
         expect(self.browser_fixture.locator(LPL.LOGIN_ENTER_WITH_PASSWORD_BUTTON)).to_be_visible(timeout=1000)
         self.browser_fixture.locator(LPL.LOGIN_ENTER_WITH_PASSWORD_BUTTON).click()
-        self.browser_fixture.pause()
+        # self.browser_fixture.pause()
 
     # _BUTTON_LOGIN_MENU = '#lk-enter'
     # _LINK_LOGIN_PAGE = '.lk-popup__links .'
