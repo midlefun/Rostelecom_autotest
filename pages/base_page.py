@@ -6,5 +6,8 @@ class BasePage:
     def open(self):
         self.browser_fixture.goto(self.url)
 
+    # TODO Создать методы find element и find elements
+
+
     def pause(self):
         self.browser_fixture.pause()
