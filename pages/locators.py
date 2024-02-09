@@ -4,4 +4,4 @@ class MainPageLocators:
 
 class LoginPageLocators:
     EMAIL_OR_TELEPHONE_INPUT = '#address'
-    ENTER_WITH_PASSWORD_BUTTON = '#standard_auth_btna'
+    ENTER_WITH_PASSWORD_BUTTON = '#standard_auth_btn'
